@@ -1,0 +1,24 @@
+.container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  z-index: 50;
+}
+
+.secNumber {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.secTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}

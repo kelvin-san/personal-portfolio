@@ -1,0 +1,74 @@
+.container {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  z-index: 50;
+}
+
+/* Texto "menu" visível sempre */
+.menuLabel {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+
+  color: #ffffff;
+  opacity: 0.5;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Aumenta opacidade ao hover geral */
+.container:hover .menuLabel {
+  opacity: 1;
+}
+
+/* Lista escondida inicialmente */
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+
+  transition: all 0.3s ease;
+}
+
+/* Revela menu ao hover */
+.container:hover .menuList {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Itens */
+.menuItem {
+  cursor: pointer;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover individual */
+.menuItem:hover {
+  transform: translateX(-6px);
+  opacity: 0.85;
+}
