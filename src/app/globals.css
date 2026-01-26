@@ -26,3 +26,21 @@ body {
   color: var(--foreground);
   font-family: 'Roboto', sans-serif;
 }
+
+.snap-container {
+  height: 100vh;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-section {
+  height: 100vh;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

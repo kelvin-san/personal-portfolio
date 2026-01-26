@@ -5,9 +5,17 @@ import HomeSection from "./components/1home/HomeSection";
 export default function Home() {
   return (
     <div>
-      <Header secNumber={1} secTitle="Home"></Header>
-      <SideMenu></SideMenu>
-      <HomeSection></HomeSection>
-    </div> 
+      <div>
+        <Header secNumber={1} secTitle="Home" />
+      </div>
+      <div>
+        <SideMenu />
+      </div>
+      <div className="snap-container">
+        <div className="snap-section">
+          <HomeSection />
+        </div>
+      </div>
+    </div>
   )
 }
