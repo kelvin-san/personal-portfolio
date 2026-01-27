@@ -1,9 +1,4 @@
 .container {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 2.5rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;

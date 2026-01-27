@@ -27,6 +27,17 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.header {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2.5rem;
+
+  transition: 0.4s;
+
+  z-index: 999;
+}
+
 .snap-container {
   height: 100vh;
 
@@ -43,4 +54,12 @@ body {
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+.light {
+  color: #020202;
+}
+
+.dark {
+  color: #f2f2f2;
 }

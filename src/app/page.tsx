@@ -52,8 +52,8 @@ export default function Home() {
 
   return (
     <div>
-      <div>
-        <Header secNumber={1} secTitle="Home" />
+      <div className={`header ${activeSection.theme}`}>
+        <Header secNumber={activeSection.id} secTitle={activeSection.title} />
       </div>
       <div>
         <SideMenu />
