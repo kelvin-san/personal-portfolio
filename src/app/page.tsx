@@ -5,6 +5,7 @@ import { useSectionObserver } from "./hooks/useSectionObserver";
 import SideMenu from "./components/SideMenu";
 import Header from "./components/Header";
 import HomeSection from "./components/1home/HomeSection";
+import AboutSection from "./components/2about-me/AboutSection";
 
 type Section = {
   id: number
@@ -67,6 +68,9 @@ export default function Home() {
       <div className="snap-container">
         <div className="snap-section" id="1">
           <HomeSection />
+        </div>
+        <div className="snap-section" id="2">
+          <AboutSection />
         </div>
       </div>
     </div>

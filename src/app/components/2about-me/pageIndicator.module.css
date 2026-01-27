@@ -1,0 +1,65 @@
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4rem;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8rem;
+}
+
+.pageLabel {
+  margin: auto;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.pageLabel[active-label="1"] {
+  opacity: 1;
+}
+
+.pageLabel[active-label="0"] {
+  opacity: 0.4;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.dot {
+  margin: auto;
+  margin-top: 0.75rem;
+
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+
+  background-color: #020202;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.dot[data-active="p1"] {
+  transform: translateX(-12.5rem);
+}
+
+.dot[data-active="p2"] {
+  transform: translateX(0rem);
+}
+
+.dot[data-active="p3"] {
+  transform: translateX(12.5rem);
+}
+
+.active {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0.4;
+}
