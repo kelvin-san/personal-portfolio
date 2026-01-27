@@ -1,15 +1,16 @@
 import styles from "./sideMenu.module.css";
 
-const sections = [
-  { label: "Início", id: "home" },
-  { label: "Sobre mim", id: "about" },
-  { label: "Carreira", id: "career" },
-  { label: "Projetos", id: "projects" },
-  { label: "Habilidades", id: "skills" },
-  { label: "Contato", id: "contact" },
-];
+type Section = {
+  id: number
+  title: string
+  theme: "light" | "dark"
+}
 
-export default function SideMenu() {
+type SideMenuProps = {
+  sections: Section[]
+};
+
+export default function SideMenu({ sections } : SideMenuProps) {
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
@@ -18,13 +19,13 @@ export default function SideMenu() {
   return (
     <nav className={styles.container}>
       <ul className={styles.menuList}>
-        {sections.map((item) => (
+        {sections.map((s) => (
           <li
-            key={item.id}
+            key={s.id}
             className={styles.menuItem}
-            // onClick={() => handleScroll(item.id)}
+            // onClick={() => handleScroll(String(s.id))}
           >
-            {item.label}
+            {s.title}
           </li>
         ))}
       </ul>

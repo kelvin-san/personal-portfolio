@@ -6,8 +6,14 @@ import SideMenu from "./components/SideMenu";
 import Header from "./components/Header";
 import HomeSection from "./components/1home/HomeSection";
 
+type Section = {
+  id: number
+  title: string
+  theme: "light" | "dark"
+}
+
 export default function Home() {
-  const sections = [
+  const sections: Section[] = [
     {
       "id": 1,
       "title": "Home",
@@ -56,7 +62,7 @@ export default function Home() {
         <Header secNumber={activeSection.id} secTitle={activeSection.title} />
       </div>
       <div>
-        <SideMenu />
+        <SideMenu sections={sections} />
       </div>
       <div className="snap-container">
         <div className="snap-section" id="1">
