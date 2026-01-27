@@ -61,7 +61,7 @@ export default function Home() {
       <div className={`header ${activeSection.theme}`}>
         <Header secNumber={activeSection.id} secTitle={activeSection.title} />
       </div>
-      <div>
+      <div className={`${activeSection.theme}`}>
         <SideMenu sections={sections} />
       </div>
       <div className="snap-container">
