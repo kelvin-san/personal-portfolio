@@ -29,11 +29,27 @@ body {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 2.5rem;
+
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
 
   transition: 0.4s;
 
   z-index: 999;
+}
+
+.header::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  backdrop-filter: blur(15px);
+  mask: linear-gradient(white 0%, transparent);
+  z-index: -1;
 }
 
 .snap-container {
