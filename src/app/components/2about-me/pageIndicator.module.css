@@ -33,19 +33,7 @@
 
   background-color: #020202;
 
-  transition: transform 0.3s ease-in-out;
-}
-
-.dot[data-active="p1"] {
-  transform: translateX(-12.5rem);
-}
-
-.dot[data-active="p2"] {
-  transform: translateX(0rem);
-}
-
-.dot[data-active="p3"] {
-  transform: translateX(12.5rem);
+  will-change: transform;
 }
 
 .active {

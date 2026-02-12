@@ -8,9 +8,10 @@ type Page = {
 type PageIndicatorProps = {
   pages: Page[]
   activePage: string
+  dotX: number
 }
 
-export default function PageIndicator({ pages, activePage }: PageIndicatorProps) {
+export default function PageIndicator({ pages, activePage, dotX }: PageIndicatorProps) {
   const handleScroll = (id: string) => {
     const page = document.getElementById(id)
     page?.scrollIntoView({ behavior: "smooth" })
@@ -29,7 +30,11 @@ export default function PageIndicator({ pages, activePage }: PageIndicatorProps)
           </div>
         ))}
       </div>
-      <div className={`${styles.dot}`} data-active={activePage} />
+      <div
+        className={`${styles.dot}`}
+        style={{ transform: `translateX(${dotX}rem)` }}
+        data-active={activePage}
+      />
     </div>
   )
 }

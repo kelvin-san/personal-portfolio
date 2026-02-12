@@ -3,9 +3,10 @@ import BioPage from "./pages/BioPage";
 import EduPage from "./pages/EduPage";
 import VidPage from "./pages/VidPage";
 import PageIndicator from "./PageIndicator";
+import { useDotScroll } from "../../hooks/useDotScroll";
 
 import { usePagesObserver } from "../../hooks/usePagesObserver";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type Page = {
   id: string
@@ -21,6 +22,11 @@ export default function AboutSection() {
 
   const [activePage, setActivePage] = useState(pages[0])
 
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const pageIds = pages.map(p => p.id)
+
+  const dotX = useDotScroll(scrollRef, pageIds)
+
   usePagesObserver(
     pages.map(p => p.id),
     (id) => {
@@ -30,7 +36,7 @@ export default function AboutSection() {
 
   return (
     <div className={`${styles.container}`}>
-      <div className={`${styles.horizontalContainer}`}>
+      <div ref={scrollRef} className={`${styles.horizontalContainer}`}>
         <div className={`${styles.panel}`} id="p1">
           <BioPage />
         </div>
@@ -41,7 +47,7 @@ export default function AboutSection() {
           <VidPage />
         </div>
       </div>
-      <PageIndicator pages={pages} activePage={activePage.id} />
+      <PageIndicator pages={pages} activePage={activePage.id} dotX={dotX} />
     </div>
   )
 }
