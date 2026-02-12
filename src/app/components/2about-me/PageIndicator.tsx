@@ -1,16 +1,16 @@
 import styles from "./pageIndicator.module.css"
 
-const pages = [
-  { id: "p1", label: "Biografia" },
-  { id: "p2", label: "Formação" },
-  { id: "p3", label: "Vídeo" },
-]
+type Page = {
+  id: string
+  label: string
+}
 
 type PageIndicatorProps = {
+  pages: Page[]
   activePage: string
 }
 
-export default function PageIndicator({ activePage }: PageIndicatorProps) {
+export default function PageIndicator({ pages, activePage }: PageIndicatorProps) {
   const handleScroll = (id: string) => {
     const page = document.getElementById(id)
     page?.scrollIntoView({ behavior: "smooth" })

@@ -7,11 +7,16 @@ import PageIndicator from "./PageIndicator";
 import { usePagesObserver } from "../../hooks/usePagesObserver";
 import { useState } from "react";
 
+type Page = {
+  id: string
+  label: string
+}
+
 export default function AboutSection() {
-  const pages = [
-    { "id": "p1" },
-    { "id": "p2" },
-    { "id": "p3" }
+  const pages: Page[] = [
+    { id: "p1", label: "Biografia" },
+    { id: "p2", label: "Formação" },
+    { id: "p3", label: "Vídeo" },
   ]
 
   const [activePage, setActivePage] = useState(pages[0])
@@ -36,7 +41,7 @@ export default function AboutSection() {
           <VidPage />
         </div>
       </div>
-      <PageIndicator activePage={activePage.id} />
+      <PageIndicator pages={pages} activePage={activePage.id} />
     </div>
   )
 }
