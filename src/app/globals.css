@@ -26,6 +26,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .header {
   position: fixed;
   left: 50%;
@@ -62,6 +66,13 @@ body {
   overflow-y: auto;
 
   -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
 }
 
 .snap-section {
