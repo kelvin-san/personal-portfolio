@@ -1,0 +1,106 @@
+.container {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2;
+}
+
+.content {
+  position: absolute;
+
+  margin-top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  max-height: 60vh;
+  width: 65vw;
+}
+
+.dot {
+  position: absolute;
+
+  left: -15rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  background: #f2f2f2;
+  border: 0.15rem solid #020202;
+}
+
+.topLine {
+  position: absolute;
+
+  left: -13rem;
+  bottom: 50%;
+
+  width: 0.15rem;
+  height: 70vh;
+
+  background-color: #020202;
+  z-index: -1;
+}
+
+.bottomLine {
+  position: absolute;
+
+  left: -13rem;
+  top: 50%;
+
+  width: 0.15rem;
+  height: 70vh;
+
+  background-color: #020202;
+  z-index: -1;
+}
+
+.positionDate {
+  position: absolute;
+  top: 0.75rem;
+  left: 3.5rem;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.positionContent {
+  padding-left: 12.5rem;
+}
+
+.positionTitle {
+  position: relative;
+  margin-bottom: 4rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.positionDescription {
+  font-weight: 300;
+}
+
+.tagsContainer {
+  margin-top: 3rem;
+  display: flex;
+
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.1rem 0.8rem;
+
+  border: 0.05rem solid #8a8a8a;
+  border-radius: 1rem;
+
+  font-weight: 300;
+  color: #8a8a8a;
+}
