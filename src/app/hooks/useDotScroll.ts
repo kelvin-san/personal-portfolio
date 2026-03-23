@@ -7,10 +7,10 @@ const DOT_POSITIONS = {
 } as const
 
 export function useDotScroll(
-  containerRef: React.RefObject<HTMLElement>,
+  containerRef: React.RefObject<HTMLElement | null>,
   pages: string[]
 ) {
-  const [x, setX] = useState(DOT_POSITIONS.p1)
+  const [x, setX] = useState<number>(DOT_POSITIONS.p1)
 
   useEffect(() => {
     const el = containerRef.current
