@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 
-export default function(
+export default function Header(
   { secNumber, 
     secTitle
   }: 
