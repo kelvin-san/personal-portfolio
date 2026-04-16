@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import HomeSection from "./components/1home/HomeSection";
 import AboutSection from "./components/2about-me/AboutSection";
 import CareerSection from "./components/3career/CareerSection";
+import ContactSection from "./components/6contact/ContactSection";
 
 type Section = {
   id: number
@@ -75,6 +76,9 @@ export default function Home() {
         </div>
         <div className="snap-section" id="3">
           <CareerSection />
+        </div>
+        <div className="snap-section" id="6">
+          <ContactSection />
         </div>
       </div>
     </div>
