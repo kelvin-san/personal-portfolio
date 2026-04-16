@@ -1,4 +1,5 @@
-import styles from "./position.module.css";
+import styles from "./position.module.css"
+import { Reveal } from "../Reveal"
 
 type Position = {
   id: number
@@ -22,9 +23,11 @@ export default function Position({ position, index, total }: PositionProps) {
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.content}`}>
-        <div className={`${styles.positionDate}`}>
-          {position.beginDate}
-        </div>
+        <Reveal direction="right" delay={300}>
+          <div className={`${styles.positionDate}`}>
+            {position.beginDate}
+          </div>
+        </Reveal>
         <div className={`${styles.positionContent}`}>
           <div className={`${styles.positionTitle}`}>
             <div className={`${styles.dot}`} />
@@ -32,20 +35,26 @@ export default function Position({ position, index, total }: PositionProps) {
             {!isFirst && <div className={styles.topLine} />}
             {!isLast && <div className={styles.bottomLine} />}
 
-            {position.title} · {position.company}
+            <Reveal direction="right" delay={400}>
+              {position.title} · {position.company}
+            </Reveal>
           </div>
           <div className={`${styles.positionDescription}`}>
-            {position.description}
+            <Reveal direction="up" delay={500}>
+              {position.description}
+            </Reveal>
           </div>
           <div className={`${styles.tagsContainer}`}>
             {
-              position.tags.map((t) => (
-                <div
+              position.tags.map((t, index) => (
+                <Reveal
                   key={t}
-                  className={`${styles.tag}`}
+                  direction="up" delay={500 + index * 100}
                 >
-                  {t}
-                </div>
+                  <div className={`${styles.tag}`}>
+                    {t}
+                  </div>
+                </Reveal>
               ))
             }
           </div>

@@ -89,3 +89,29 @@ body::-webkit-scrollbar {
 .dark {
   color: #f2f2f2;
 }
+
+.reveal {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.reveal-left {
+  transform: translateX(40px);
+}
+
+.reveal-right {
+  transform: translateX(-40px);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}

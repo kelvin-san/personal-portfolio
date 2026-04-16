@@ -1,4 +1,5 @@
-import styles from "./home.module.css";
+import styles from "./home.module.css"
+import { Reveal } from "../Reveal"
 
 export default function HomeSection() {
   return (
@@ -12,22 +13,30 @@ export default function HomeSection() {
       />
 
       <div className={styles.content}>
-        <span className={styles.intro}>Eu sou</span>
+        <Reveal direction="right" delay={200}>
+          <span className={styles.intro}>Eu sou</span>
+        </Reveal>
 
-        <h1 className={styles.name}>
-          Kelvin Santana
-        </h1>
+        <Reveal direction="right" delay={400}>
+          <h1 className={styles.name}>
+            Kelvin Santana
+          </h1>
+        </Reveal>
 
-        <h2 className={styles.role}>
-          Desenvolvedor SAP ABAP
-        </h2>
+        <Reveal direction="right" delay={600}>
+          <h2 className={styles.role}>
+            Desenvolvedor SAP ABAP
+          </h2>
+        </Reveal>
 
-        <p className={styles.subtitle}>
-          E esse <br />
-          é meu <br />
-          portfólio
-        </p>
+        <Reveal direction="right" delay={800}>
+          <p className={styles.subtitle}>
+            E esse <br />
+            é meu <br />
+            portfólio
+          </p>
+        </Reveal>
       </div>
     </section>
-  );
+  )
 }

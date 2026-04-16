@@ -1,4 +1,5 @@
 import styles from "./pageIndicator.module.css"
+import { Reveal } from "../Reveal"
 
 type Page = {
   id: string
@@ -20,21 +21,25 @@ export default function PageIndicator({ pages, activePage, dotX }: PageIndicator
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.items}`}>
-        {pages.map((page) => (
+        {pages.map((page, index) => (
           <div
             key={page.id}
             className={`${styles.pageLabel} ${activePage == page.id ? styles.active : styles.inactive}`}
             onClick={() => handleScroll(page.id)}
           >
-            <span className={`${styles.title}`}>{page.label}</span>
+            <Reveal direction="up" delay={600 + index * 100}>
+              <span className={`${styles.title}`}>{page.label}</span>
+            </Reveal>
           </div>
         ))}
       </div>
-      <div
-        className={`${styles.dot}`}
-        style={{ transform: `translateX(${dotX}rem)` }}
-        data-active={activePage}
-      />
+      <Reveal direction="up" delay={700}>
+        <div
+          className={`${styles.dot}`}
+          style={{ transform: `translateX(${dotX}rem)` }}
+          data-active={activePage}
+        />
+      </Reveal>
     </div>
   )
 }
